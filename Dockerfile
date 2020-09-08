@@ -5,7 +5,7 @@ RUN apt-get -qy update          \
     && apt-get install -qy      \
         cargo                   \
         libgit2-dev             \
-        pkg-config              \
+        pkg-config libssl-dev   \
     && apt-get -q -y autoremove \
     && apt-get -q -y clean      \
 
@@ -23,5 +23,6 @@ RUN cargo install procs
 RUN cargo install sd
 RUN cargo install du-dust
 RUN cargo install ytop
+RUN cargo install hyperfine
 
 # vim: ts=4 sw=4 expandtab ff=unix :
